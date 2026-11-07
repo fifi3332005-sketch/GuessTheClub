@@ -411,3 +411,10 @@ button {
     font-size: 38px;
     line-height: 1;
 }
+h1,
+#licznik,
+.nazwa-klubu,
+.podpowiedz,
+button {
+    font-family: "Comic Neue", cursive;
+}
