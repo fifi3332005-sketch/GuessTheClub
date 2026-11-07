@@ -1,0 +1,413 @@
+
+/* ==========================================
+   1. CAŁA STRONA
+========================================== */
+
+body {
+    background: radial-gradient( ellipse at top, rgba(25, 100, 65, 0.45), transparent 65% ), linear-gradient( 180deg, #08131b 0%, #10251e 60%, #06120e 100% );
+    color: white;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 70px 20px;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   2. TYTUŁ GRY
+========================================== */
+
+h1 {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 60px;
+    font-weight: normal;
+    color: #1db954;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 1px;
+    text-shadow: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   3. LICZNIK PRÓB
+========================================== */
+
+#licznik {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 23px;
+    color: #1db954;
+    margin-bottom: 60px;
+}
+
+
+/* ==========================================
+   4. PANEL WPISYWANIA KLUBU
+========================================== */
+
+.panel-wpisywania {
+    position: relative;
+    width: 800px;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+    /* Pole tekstowe */
+
+    .panel-wpisywania input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: none;
+        padding: 22px 25px;
+        background-color: #142c27;
+        color: white;
+        border: 2px solid #367a59;
+        border-radius: 12px;
+        font-size: 20px;
+        text-align: left;
+        outline: none;
+        box-shadow: 0 0 20px rgba(0, 255, 120, 0.1);
+        margin: 0;
+        transition: 0.3s;
+    }
+
+        /* Podświetlenie po kliknięciu */
+
+        .panel-wpisywania input:focus {
+            border-color: #4eff9a;
+            box-shadow: 0 0 22px rgba(78, 255, 154, 0.35);
+        }
+
+
+/* ==========================================
+   5. LISTA PODPOWIEDZI
+========================================== */
+
+#podpowiedzi {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    max-height: 240px;
+    overflow-y: auto;
+    background-color: #142c27;
+    border-radius: 12px;
+    z-index: 100;
+    text-align: left;
+}
+
+/* Pojedynczy klub na liście */
+
+.podpowiedz {
+    padding: 15px 25px;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    /* Podświetlenie wybranej propozycji */
+
+    .podpowiedz:hover {
+        background-color: #1db954;
+        color: white;
+    }
+
+
+/* ==========================================
+   6. NAGŁÓWKI TABELI I HISTORIA PRÓB
+========================================== */
+
+/* Wspólny układ pięciu kolumn */
+
+.naglowki,
+.wiersz {
+    display: grid;
+    grid-template-columns: 220px repeat(5, minmax(0, 1fr));
+    gap: 12px;
+
+    width: 1200px;
+    max-width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+
+    transform: none;
+}
+
+/* Nazwy kolumn */
+
+.naglowki {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.naglowki > div:first-child {
+    text-align: left;
+}
+
+/* Kontener historii */
+
+#historia {
+    max-width: none;
+    margin: 10px auto 40px;
+}
+
+/* Odstępy między kolejnymi próbami */
+
+.wiersz {
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   7. NAZWA ZGADYWANEGO KLUBU
+========================================== */
+
+.nazwa-klubu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+    transform: translateX(-50px);
+}
+
+
+/* ==========================================
+   8. KAFELKI WYNIKÓW
+========================================== */
+
+.komorka {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+    min-height: 70px;
+    padding: 15px;
+    background-color: rgba(10, 30, 35, 0.85);
+    color: white;
+    border: 1px solid #54d88a;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+    /* Poprawna wartość */
+
+    .komorka.zielony {
+        background-color: #308452;
+        border: 2px solid #50df89;
+        color: white;
+    }
+
+    /* Niepoprawna wartość */
+
+    .komorka.czerwony {
+        background-color: #842f3c;
+        border: 2px solid #e45b6d;
+        color: white;
+    }
+
+    /* Kafelek odległości */
+
+    .komorka.odleglosc {
+        background-color: #842f3c;
+        border: 2px solid #e45b6d;
+        color: white;
+    }
+
+
+/* ==========================================
+   9. STRZAŁKI SVG
+========================================== */
+
+.strzalka {
+    display: block;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+    /* Strzałka wskazująca w dół */
+
+    .strzalka.dol {
+        transform: rotate(180deg);
+    }
+
+
+/* ==========================================
+   10. PRZYCISKI PLAY AGAIN
+========================================== */
+
+button {
+    background-color: #1db954;
+    background-image: none;
+    color: white;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 40px;
+    margin: 12px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+    /* Najechanie myszką */
+
+    button:hover {
+        background: #35da83;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0, 255, 120, 0.45);
+    }
+
+    /* Kliknięcie */
+
+    button:active {
+        transform: translateY(1px);
+    }
+
+
+/* ==========================================
+   11. WSPÓLNY EKRAN KOŃCA GRY
+========================================== */
+
+.ekran-wygranej,
+.ekran-przegranej {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    animation: pojawienie 0.5s ease;
+}
+
+
+/* ==========================================
+   12. EKRAN ZWYCIĘSTWA
+========================================== */
+
+.okno-wygranej {
+    background: linear-gradient(135deg, #102a20, #174d32);
+    padding: 50px;
+    border: 2px solid #50df89;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(0, 255, 120, 0.3);
+}
+
+    .okno-wygranej h1 {
+        color: #50df89;
+        font-size: 42px;
+    }
+
+    .okno-wygranej p {
+        color: white;
+        font-size: 20px;
+    }
+
+
+/* ==========================================
+   13. EKRAN PORAŻKI
+========================================== */
+
+.okno-przegranej {
+    background: linear-gradient(135deg, #35121a, #641f2a);
+    padding: 50px;
+    border: 2px solid #e45b6d;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(255, 60, 80, 0.3);
+}
+
+    .okno-przegranej h1 {
+        color: #ff6575;
+        font-size: 42px;
+    }
+
+    .okno-przegranej h2 {
+        color: white;
+        font-size: 30px;
+    }
+
+    .okno-przegranej p {
+        color: white;
+        font-size: 19px;
+    }
+
+
+/* ==========================================
+   14. ANIMACJA EKRANÓW KOŃCOWYCH
+========================================== */
+
+@keyframes pojawienie {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================================
+   15. WERSJA MOBILNA
+========================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 45px 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .panel-wpisywania {
+        width: 100%;
+        max-width: 100%;
+    }
+
+        .panel-wpisywania input {
+            width: 100%;
+        }
+
+    button {
+        width: 90%;
+        max-width: 340px;
+    }
+}
+/* FLAGI KRAJÓW */
+
+.flaga {
+    font-size: 38px;
+    line-height: 1;
+}
