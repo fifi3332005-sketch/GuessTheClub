@@ -374,50 +374,6 @@ button {
         opacity: 1;
     }
 }
-
-
-/* ==========================================
-   15. WERSJA MOBILNA
-========================================== */
-
-@media (max-width: 600px) {
-
-    body {
-        padding: 45px 15px;
-    }
-
-    h1 {
-        font-size: 28px;
-        letter-spacing: 1px;
-    }
-
-    .panel-wpisywania {
-        width: 100%;
-        max-width: 100%;
-    }
-
-        .panel-wpisywania input {
-            width: 100%;
-        }
-
-    button {
-        width: 90%;
-        max-width: 340px;
-    }
-}
-/* FLAGI KRAJÓW */
-
-.flaga {
-    font-size: 38px;
-    line-height: 1;
-}
-h1,
-#licznik,
-.nazwa-klubu,
-.podpowiedz,
-button {
-    font-family: "Comic Neue", cursive;
-}
 /* ==========================================
    WERSJA MOBILNA - WSZYSTKO W JEDNEJ LINII
 ========================================== */
