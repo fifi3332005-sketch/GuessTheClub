@@ -418,3 +418,52 @@ h1,
 button {
     font-family: "Comic Neue", cursive;
 }
+/* ==========================================
+   WERSJA MOBILNA - TABELA Z PRZEWIJANIEM
+========================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: auto;
+    }
+
+    .naglowki,
+    .wiersz {
+        width: 1050px;
+        max-width: none;
+        grid-template-columns: 190px repeat(5, 160px);
+        gap: 12px;
+        transform: none;
+    }
+
+    #historia {
+        width: 1050px;
+        max-width: none;
+    }
+
+    .naglowki {
+        margin-top: 90px;
+    }
+
+    .nazwa-klubu {
+        font-size: 20px;
+        transform: none;
+        white-space: normal;
+    }
+
+    .komorka {
+        font-size: 15px;
+        min-height: 65px;
+        padding: 10px;
+    }
+
+    .strzalka {
+        width: 30px;
+        height: 30px;
+    }
+
+    .flaga {
+        font-size: 30px;
+    }
+}
