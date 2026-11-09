@@ -34,11 +34,11 @@
          console.log("Loaded clubs:", kluby.length);
 
      } catch (blad) {
-         console.error("Database error:", blad);
+    console.error("Database error:", blad);
 
-         document.getElementById("licznik").textContent =
-             "Could not load clubs. Please refresh the page.";
-     }
+    document.getElementById("licznik").textContent =
+        "Error: " + blad.message;
+}
  }
 
 
