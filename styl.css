@@ -3,15 +3,33 @@
    1. CAŁA STRONA
 ========================================== */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    background: radial-gradient( ellipse at top, rgba(25, 100, 65, 0.45), transparent 65% ), linear-gradient( 180deg, #08131b 0%, #10251e 60%, #06120e 100% );
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(25, 100, 65, 0.45),
+            transparent 65%
+        ),
+        linear-gradient(
+            180deg,
+            #08131b 0%,
+            #10251e 60%,
+            #06120e 100%
+        );
+
     color: white;
     font-family: Verdana, sans-serif;
     text-align: center;
+
     min-height: 100vh;
     margin: 0;
     padding: 70px 20px;
-    box-sizing: border-box;
 }
 
 
@@ -22,17 +40,14 @@ body {
 h1 {
     font-family: "Comic Neue", cursive;
     font-size: 60px;
-    font-weight: normal;
+    font-weight: 400;
+
     color: #1db954;
     text-align: center;
-    text-transform: none;
     letter-spacing: 1px;
-    text-shadow: none;
-    background: none;
-    border: none;
-    box-shadow: none;
+
+    margin: 0 0 35px;
     padding: 0;
-    margin-bottom: 35px;
 }
 
 
@@ -41,10 +56,12 @@ h1 {
 ========================================== */
 
 #licznik {
-    font-family: "Comic Sans MS", cursive;
+    font-family: "Comic Neue", cursive;
     font-size: 23px;
+    font-weight: 700;
     color: #1db954;
-    margin-bottom: 60px;
+
+    margin: 0 0 60px;
 }
 
 
@@ -54,37 +71,49 @@ h1 {
 
 .panel-wpisywania {
     position: relative;
+
     width: 800px;
     max-width: 75%;
     margin: 0 auto;
 }
 
-    /* Pole tekstowe */
+/* Pole tekstowe */
 
-    .panel-wpisywania input {
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        max-width: none;
-        padding: 22px 25px;
-        background-color: #142c27;
-        color: white;
-        border: 2px solid #367a59;
-        border-radius: 12px;
-        font-size: 20px;
-        text-align: left;
-        outline: none;
-        box-shadow: 0 0 20px rgba(0, 255, 120, 0.1);
-        margin: 0;
-        transition: 0.3s;
-    }
+.panel-wpisywania input {
+    display: block;
 
-        /* Podświetlenie po kliknięciu */
+    width: 100%;
+    padding: 22px 25px;
+    margin: 0;
 
-        .panel-wpisywania input:focus {
-            border-color: #4eff9a;
-            box-shadow: 0 0 22px rgba(78, 255, 154, 0.35);
-        }
+    background-color: #142c27;
+    color: white;
+
+    border: 2px solid #367a59;
+    border-radius: 12px;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 20px;
+    text-align: left;
+
+    box-shadow: 0 0 20px rgba(0, 255, 120, 0.1);
+
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.panel-wpisywania input::placeholder {
+    color: #a1afa7;
+}
+
+/* Podświetlenie po kliknięciu */
+
+.panel-wpisywania input:focus {
+    border-color: #4eff9a;
+    box-shadow: 0 0 22px rgba(78, 255, 154, 0.35);
+}
 
 
 /* ==========================================
@@ -95,44 +124,79 @@ h1 {
     position: absolute;
     top: calc(100% + 5px);
     left: 0;
+
     width: 100%;
     max-height: 240px;
+
     overflow-y: auto;
+
     background-color: #142c27;
     border-radius: 12px;
+
     z-index: 100;
     text-align: left;
 }
 
-/* Pojedynczy klub na liście */
+/* Ukrycie pustej listy */
+
+#podpowiedzi:empty {
+    display: none;
+}
+
+/* Pojedynczy klub */
 
 .podpowiedz {
     padding: 15px 25px;
+
     color: white;
-    font-family: "Comic Sans MS", cursive;
+    font-family: "Comic Neue", cursive;
     font-size: 18px;
+    font-weight: 700;
+
     cursor: pointer;
+
     transition: background-color 0.2s;
 }
+.podpowiedz {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-    /* Podświetlenie wybranej propozycji */
+.flaga-podpowiedzi {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    .podpowiedz:hover {
-        background-color: #1db954;
-        color: white;
-    }
+    width: 30px;
+    flex-shrink: 0;
+
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* Podświetlenie propozycji */
+
+.podpowiedz:hover {
+    background-color: #1db954;
+    color: white;
+}
 
 
 /* ==========================================
-   6. NAGŁÓWKI TABELI I HISTORIA PRÓB
+   6. NAGŁÓWKI I HISTORIA PRÓB
 ========================================== */
 
-/* Wspólny układ pięciu kolumn */
+/* Sześć kolumn: nazwa + pięć parametrów */
 
 .naglowki,
 .wiersz {
     display: grid;
-    grid-template-columns: 220px repeat(5, minmax(0, 1fr));
+
+    grid-template-columns:
+        220px
+        repeat(5, minmax(0, 1fr));
+
     gap: 12px;
 
     width: 1200px;
@@ -140,31 +204,37 @@ h1 {
 
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
 
-    transform: none;
+    align-items: center;
 }
 
-/* Nazwy kolumn */
+/* Nagłówki tabeli */
 
 .naglowki {
     margin-top: 100px;
     margin-bottom: 10px;
-    font-weight: bold;
+
+    font-size: 14px;
+    font-weight: 700;
     text-align: center;
 }
+
+.naglowki > div {
+    min-width: 0;
+}
+
 .naglowki > div:first-child {
     text-align: left;
 }
 
-/* Kontener historii */
+/* Historia prób */
 
 #historia {
-    max-width: none;
+    width: 100%;
     margin: 10px auto 40px;
 }
 
-/* Odstępy między kolejnymi próbami */
+/* Pojedyncza próba */
 
 .wiersz {
     margin-bottom: 10px;
@@ -172,23 +242,24 @@ h1 {
 
 
 /* ==========================================
-   7. NAZWA ZGADYWANEGO KLUBU
+   7. NAZWA WYBRANEGO KLUBU
 ========================================== */
 
 .nazwa-klubu {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: none;
-    border: none;
-    box-shadow: none;
+
+    min-width: 0;
+
     color: white;
-    font-family: "Comic Sans MS", cursive;
+    font-family: "Comic Neue", cursive;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
+
     text-align: left;
-    white-space: nowrap;
-    transform: translateX(-50px);
+    overflow-wrap: anywhere;
+    line-height: 1.2;
 }
 
 
@@ -200,42 +271,47 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 10px;
+
     min-width: 0;
     min-height: 70px;
     padding: 15px;
+
     background-color: rgba(10, 30, 35, 0.85);
     color: white;
+
     border: 1px solid #54d88a;
     border-radius: 50px;
+
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
 }
 
-    /* Poprawna wartość */
+/* Poprawna wartość */
 
-    .komorka.zielony {
-        background-color: #308452;
-        border: 2px solid #50df89;
-        color: white;
-    }
+.komorka.zielony {
+    background-color: #308452;
+    border: 2px solid #50df89;
+    color: white;
+}
 
-    /* Niepoprawna wartość */
+/* Niepoprawna wartość */
 
-    .komorka.czerwony {
-        background-color: #842f3c;
-        border: 2px solid #e45b6d;
-        color: white;
-    }
+.komorka.czerwony {
+    background-color: #842f3c;
+    border: 2px solid #e45b6d;
+    color: white;
+}
 
-    /* Kafelek odległości */
+/* Odległość */
 
-    .komorka.odleglosc {
-        background-color: #842f3c;
-        border: 2px solid #e45b6d;
-        color: white;
-    }
+.komorka.odleglosc {
+    background-color: #842f3c;
+    border: 2px solid #e45b6d;
+    color: white;
+}
 
 
 /* ==========================================
@@ -244,16 +320,18 @@ h1 {
 
 .strzalka {
     display: block;
+
     width: 42px;
     height: 42px;
+
     flex-shrink: 0;
 }
 
-    /* Strzałka wskazująca w dół */
+/* Strzałka w dół */
 
-    .strzalka.dol {
-        transform: rotate(180deg);
-    }
+.strzalka.dol {
+    transform: rotate(180deg);
+}
 
 
 /* ==========================================
@@ -262,48 +340,61 @@ h1 {
 
 button {
     background-color: #1db954;
-    background-image: none;
     color: white;
-    font-family: "Comic Sans MS", cursive;
+
+    font-family: "Comic Neue", cursive;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
+
     padding: 18px 40px;
     margin: 12px;
+
     border: none;
     border-radius: 50px;
+
     cursor: pointer;
-    box-shadow: none;
-    transition: 0.3s;
+
+    transition:
+        background-color 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
-    /* Najechanie myszką */
+/* Najechanie myszką */
 
-    button:hover {
-        background: #35da83;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 30px rgba(0, 255, 120, 0.45);
-    }
+button:hover {
+    background-color: #35da83;
+    transform: translateY(-3px);
 
-    /* Kliknięcie */
+    box-shadow: 0 8px 30px rgba(0, 255, 120, 0.45);
+}
 
-    button:active {
-        transform: translateY(1px);
-    }
+/* Kliknięcie */
+
+button:active {
+    transform: translateY(1px);
+}
 
 
 /* ==========================================
-   11. WSPÓLNY EKRAN KOŃCA GRY
+   11. EKRANY KOŃCOWE
 ========================================== */
 
 .ekran-wygranej,
 .ekran-przegranej {
     position: fixed;
     inset: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 15px;
+
     background-color: rgba(0, 0, 0, 0.85);
+
     z-index: 1000;
+
     animation: pojawienie 0.5s ease;
 }
 
@@ -313,23 +404,31 @@ button {
 ========================================== */
 
 .okno-wygranej {
-    background: linear-gradient(135deg, #102a20, #174d32);
+    background: linear-gradient(
+        135deg,
+        #102a20,
+        #174d32
+    );
+
     padding: 50px;
+
     border: 2px solid #50df89;
     border-radius: 20px;
+
     text-align: center;
+
     box-shadow: 0 0 60px rgba(0, 255, 120, 0.3);
 }
 
-    .okno-wygranej h1 {
-        color: #50df89;
-        font-size: 42px;
-    }
+.okno-wygranej h1 {
+    color: #50df89;
+    font-size: 42px;
+}
 
-    .okno-wygranej p {
-        color: white;
-        font-size: 20px;
-    }
+.okno-wygranej p {
+    color: white;
+    font-size: 20px;
+}
 
 
 /* ==========================================
@@ -337,32 +436,40 @@ button {
 ========================================== */
 
 .okno-przegranej {
-    background: linear-gradient(135deg, #35121a, #641f2a);
+    background: linear-gradient(
+        135deg,
+        #35121a,
+        #641f2a
+    );
+
     padding: 50px;
+
     border: 2px solid #e45b6d;
     border-radius: 20px;
+
     text-align: center;
+
     box-shadow: 0 0 60px rgba(255, 60, 80, 0.3);
 }
 
-    .okno-przegranej h1 {
-        color: #ff6575;
-        font-size: 42px;
-    }
+.okno-przegranej h1 {
+    color: #ff6575;
+    font-size: 42px;
+}
 
-    .okno-przegranej h2 {
-        color: white;
-        font-size: 30px;
-    }
+.okno-przegranej h2 {
+    color: white;
+    font-size: 30px;
+}
 
-    .okno-przegranej p {
-        color: white;
-        font-size: 19px;
-    }
+.okno-przegranej p {
+    color: white;
+    font-size: 19px;
+}
 
 
 /* ==========================================
-   14. ANIMACJA EKRANÓW KOŃCOWYCH
+   14. ANIMACJE
 ========================================== */
 
 @keyframes pojawienie {
@@ -374,29 +481,37 @@ button {
         opacity: 1;
     }
 }
+
+
 /* ==========================================
-   WERSJA MOBILNA - WSZYSTKO W JEDNEJ LINII
+   15. WERSJA MOBILNA
+   WSZYSTKIE KOLUMNY W JEDNEJ LINII
 ========================================== */
 
 @media (max-width: 768px) {
+
+    /* Cała strona */
 
     body {
         padding: 35px 8px;
         overflow-x: hidden;
     }
 
-    /* Tytuł i licznik */
+    /* Tytuł */
 
     h1 {
         font-size: 28px;
+        margin-bottom: 25px;
     }
+
+    /* Licznik */
 
     #licznik {
         font-size: 22px;
         margin-bottom: 45px;
     }
 
-    /* Pole wpisywania */
+    /* Panel wpisywania */
 
     .panel-wpisywania {
         width: 100%;
@@ -405,11 +520,18 @@ button {
 
     .panel-wpisywania input {
         width: 100%;
-        font-size: 17px;
         padding: 16px;
+        font-size: 17px;
     }
 
-    /* Sześć kolumn: nazwa + pięć kafelków */
+    /* Podpowiedzi */
+
+    .podpowiedz {
+        padding: 13px 16px;
+        font-size: 16px;
+    }
+
+    /* Sześć kolumn w jednej linii */
 
     .naglowki,
     .wiersz {
@@ -421,19 +543,33 @@ button {
             repeat(5, minmax(0, 1fr));
 
         gap: 3px;
-        transform: none;
     }
+
+    /* Nagłówki */
 
     .naglowki {
         margin-top: 75px;
         margin-bottom: 8px;
+
         font-size: 9px;
+        line-height: 1.2;
     }
+
+    .naglowki > div {
+        overflow-wrap: anywhere;
+    }
+
+    /* Historia */
 
     #historia {
         width: 100%;
         max-width: 100%;
-        margin: 8px auto;
+
+        margin: 8px auto 30px;
+    }
+
+    .wiersz {
+        margin-bottom: 8px;
     }
 
     /* Nazwa klubu */
@@ -441,8 +577,10 @@ button {
     .nazwa-klubu {
         font-size: 10px;
         line-height: 1.2;
+
         white-space: normal;
         overflow-wrap: anywhere;
+
         transform: none;
     }
 
@@ -451,14 +589,17 @@ button {
     .komorka {
         min-width: 0;
         min-height: 42px;
-        padding: 5px 2px;
 
+        padding: 5px 2px;
         gap: 2px;
 
         font-size: 9px;
+        line-height: 1.2;
+
         border-radius: 12px;
 
         flex-direction: column;
+        overflow-wrap: anywhere;
     }
 
     /* Strzałki */
@@ -472,14 +613,16 @@ button {
 
     .flaga {
         font-size: 22px;
+        line-height: 1;
     }
 
-    /* Okna zwycięstwa i porażki */
+    /* Okna końcowe */
 
     .okno-wygranej,
     .okno-przegranej {
         width: 90%;
-        box-sizing: border-box;
+        max-width: 450px;
+
         padding: 25px 15px;
     }
 
@@ -488,3 +631,373 @@ button {
         font-size: 28px;
     }
 }
+
+
+/* ==========================================
+   16. BARDZO MAŁE EKRANY
+========================================== */
+
+@media (max-width: 380px) {
+
+    .naglowki,
+    .wiersz {
+        gap: 2px;
+    }
+
+    .naglowki {
+        font-size: 8px;
+    }
+
+    .nazwa-klubu {
+        font-size: 9px;
+    }
+
+    .komorka {
+        font-size: 8px;
+        padding: 4px 1px;
+        border-radius: 9px;
+    }
+
+    .strzalka {
+        width: 14px;
+        height: 14px;
+    }
+
+    .flaga {
+        font-size: 18px;
+    }
+}
+
+/* Biała lupa w polu wyszukiwania */
+
+.ikona-lupy {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 25px;
+    height: 25px;
+
+    color: white;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.panel-wpisywania input {
+    padding-left: 65px;
+}
+
+@media (max-width: 768px) {
+    .ikona-lupy {
+        left: 16px;
+        width: 21px;
+        height: 21px;
+    }
+
+    .panel-wpisywania input {
+        padding-left: 48px;
+    }
+}
+
+/* ==========================================
+   IKONY NAGŁÓWKÓW TABELI
+========================================== */
+
+.naglowki .naglowek {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.naglowki .naglowek:first-child {
+    justify-content: flex-start;
+}
+
+.naglowek svg {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    color: white;
+    stroke-width: 2;
+}
+
+/* Wersja mobilna */
+
+@media (max-width: 768px) {
+
+    .naglowki .naglowek {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .naglowki .naglowek:first-child {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .naglowek svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+.naglowek > svg {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .naglowek > svg {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+/* ==========================================
+   TYTUŁ GRY - GREEN STADIUM
+========================================== */
+
+.tytul-gry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    margin: 0 auto 35px;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1.05;
+    text-align: center;
+    letter-spacing: -1.5px;
+}
+
+/* Biała pierwsza linia */
+
+.tytul-gora {
+    display: block;
+    color: #ffffff;
+    font-size: 52px;
+    font-weight: 900;
+}
+
+/* Neonowozielona druga linia */
+
+.tytul-dol {
+    display: block;
+    position: relative;
+
+    color: #a3ff42;
+    font-size: 70px;
+    font-weight: 900;
+    white-space: nowrap;
+
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Zielona kreska pod tytułem */
+
+.tytul-dol::after {
+    content: "";
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin: 10px auto 0;
+
+    background-color: #a3ff42;
+    border-radius: 10px;
+
+    transform: rotate(-3deg);
+}
+
+/* ==========================================
+   WERSJA MOBILNA
+========================================== */
+
+@media (max-width: 768px) {
+
+    .tytul-gry {
+        margin-bottom: 30px;
+        letter-spacing: -0.5px;
+    }
+
+    .tytul-gora {
+        font-size: 31px;
+    }
+
+    .tytul-dol {
+        font-size: clamp(28px, 8vw, 43px);
+    }
+
+    .tytul-dol::after {
+        width: 55px;
+        height: 3px;
+        margin-top: 8px;
+    }
+}
+
+/* ==========================================
+   KOMPAKTOWY UKŁAD DESKTOP
+   5 PRÓB NA JEDNYM EKRANIE
+========================================== */
+
+@media (min-width: 769px) {
+
+    /* Przesunięcie całej gry wyżej */
+    body {
+        padding-top: 25px;
+        padding-bottom: 15px;
+    }
+
+    /* Tytuł bliżej górnej krawędzi */
+    .tytul-gry {
+        margin-bottom: 12px;
+    }
+
+    .tytul-gora {
+        font-size: 45px;
+    }
+
+    .tytul-dol {
+        font-size: 60px;
+    }
+
+    /* Krótsza kreska pod tytułem */
+    .tytul-dol::after {
+        margin-top: 5px;
+    }
+
+    /* Licznik bliżej tytułu i wyszukiwarki */
+    #licznik {
+        margin-top: 8px;
+        margin-bottom: 25px;
+    }
+
+    /* Nieco niższe pole wpisywania */
+    .panel-wpisywania input {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    /* Mniejszy odstęp przed nagłówkami */
+    .naglowki {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    /* Mniejsze przerwy między próbami */
+    .wiersz {
+        margin-bottom: 7px;
+    }
+
+    /* Nieco niższe kafelki */
+    .komorka {
+        min-height: 60px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Historia prób */
+    #historia {
+        margin-top: 7px;
+        margin-bottom: 15px;
+    }
+}
+
+/* ==========================================
+   DELIKATNA TABELA NAGŁÓWKÓW
+========================================== */
+
+.naglowki {
+    background: rgba(8, 55, 40, 0.28);
+
+    border: 1px solid rgba(80, 223, 137, 0.22);
+    border-radius: 16px;
+
+    padding: 12px 15px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Wersja mobilna */
+
+@media (max-width: 768px) {
+    .naglowki {
+        padding: 10px 4px;
+        border-radius: 12px;
+    }
+}
+
+/* ==========================================
+   ODSTĘP NAD NAGŁÓWKAMI
+========================================== */
+
+@media (min-width: 769px) {
+    .naglowki {
+        margin-top: 60px;
+    }
+}
+
+
+/* ==========================================
+   DELIKATNA RAMKA KAŻDEJ PRÓBY
+========================================== */
+
+.wiersz {
+    background: rgba(8, 55, 40, 0.28);
+
+    border: 1px solid rgba(80, 223, 137, 0.22);
+    border-radius: 16px;
+
+    padding: 7px 10px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Wersja mobilna */
+
+@media (max-width: 768px) {
+    .naglowki {
+        margin-top: 85px;
+    }
+
+    .wiersz {
+        padding: 5px 3px;
+        border-radius: 12px;
+    }
+}
+
+/* Większe flagi w historii prób */
+
+.wiersz .flaga {
+    font-size: 38px;
+    line-height: 1;
+}
+
+/* Wersja mobilna */
+
+@media (max-width: 768px) {
+    .wiersz .flaga {
+        font-size: 28px;
+    }
+}
+
+
+
