@@ -1103,6 +1103,33 @@ button:active {
         flex-shrink: 0;
     }
 }
+/* ==========================================
+   MOBILE - UKRYCIE CAŁEJ KOLUMNY VALUE
+========================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* Usuń nagłówek Value */
+    .naglowki > div:nth-child(5) {
+        display: none !important;
+    }
+
+    /* Usuń kafelki Value z każdej próby */
+    .wiersz > div:nth-child(5) {
+        display: none !important;
+    }
+
+    /* Układ pozostałych pięciu kolumn */
+    .naglowki,
+    .wiersz {
+        grid-template-columns:
+            minmax(0, 1.4fr)
+            minmax(0, 0.85fr)
+            minmax(0, 1.35fr)
+            minmax(0, 1.15fr)
+            minmax(0, 1.15fr) !important;
+    }
+}
 
 
 
