@@ -999,27 +999,43 @@ button:active {
     }
 }
 
+
 /* ==========================================
-   MOBILE - KAFELKI I PROPORCJE KOLUMN
+   MOBILE - 5 KOLUMN BEZ CLUB VALUE
 ========================================== */
 
 @media (max-width: 768px) {
 
-    /* Sześć kolumn w jednym rzędzie */
+    /* Ukrycie Value w nagłówkach i wynikach */
+    .naglowki > :nth-child(5),
+    .wiersz > :nth-child(5) {
+        display: none;
+    }
+
+    /* Pięć widocznych kolumn */
     .naglowki,
     .wiersz {
         grid-template-columns:
-            minmax(0, 1.25fr)  /* Club Name */
-            minmax(0, 0.65fr)  /* Country */
-            minmax(0, 1.4fr)   /* City */
-            minmax(0, 1fr)     /* Capacity */
-            minmax(0, 1.1fr)   /* Value */
-            minmax(0, 1fr);    /* Distance */
+            minmax(0, 1.4fr)   /* Club Name */
+            minmax(0, 0.85fr)  /* Country */
+            minmax(0, 1.35fr)  /* City */
+            minmax(0, 1.15fr)  /* Capacity */
+            minmax(0, 1.15fr); /* Distance */
 
-        gap: 3px;
+        gap: 4px;
     }
 
-    /* Równa wysokość wszystkich komórek */
+    /* Nagłówek Country w jednej linii */
+    .naglowki .naglowek {
+        min-width: 0;
+    }
+
+    .naglowki .naglowek span {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    /* Stała wysokość wyników */
     .wiersz {
         align-items: stretch;
     }
@@ -1034,12 +1050,11 @@ button:active {
         align-items: center;
         justify-content: center;
 
-        padding: 3px 1px;
+        padding: 3px 2px;
         gap: 3px;
 
-        font-size: 9px;
-        line-height: 1.1;
-
+        font-size: 10px;
+        line-height: 1.15;
         overflow: hidden;
     }
 
@@ -1051,48 +1066,43 @@ button:active {
 
         display: flex;
         align-items: center;
-        justify-content: flex-start;
 
         font-size: 10px;
         line-height: 1.2;
         overflow-wrap: anywhere;
     }
 
-    /* Country - wąski kafelek z flagą */
-    .wiersz .komorka:nth-child(2) {
-        padding: 2px 0;
-    }
-
+    /* Flaga */
     .wiersz .flaga {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 1;
     }
 
-    /* City - nazwa w jednej linii */
+    /* City - jedna linia */
     .wiersz .komorka:nth-child(3) {
         white-space: nowrap;
-        font-size: 9px;
-        letter-spacing: -0.2px;
-        overflow: hidden;
+        font-size: 10px;
     }
 
-    /* Capacity, Value, Distance */
-    .wiersz .komorka:nth-child(n+4) {
+    /* Capacity i Distance - liczba nad strzałką */
+    .wiersz .komorka:nth-child(4),
+    .wiersz .komorka:nth-child(6) {
         flex-direction: column;
     }
 
-    /* Wartości liczbowe bez zawijania */
-    .wiersz .komorka:nth-child(n+4) span {
+    .wiersz .komorka:nth-child(4) span,
+    .wiersz .komorka:nth-child(6) span {
         white-space: nowrap;
     }
 
-    /* Strzałki zawsze pod wartościami */
+    /* Strzałki pod liczbami */
     .wiersz .strzalka {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
         flex-shrink: 0;
     }
 }
+
 
 
 
