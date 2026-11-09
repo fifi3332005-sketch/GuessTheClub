@@ -955,9 +955,6 @@ button:active {
 
 html {
     min-height: 100%;
-    background-color: #08131b;
-}
-
-body {
-    min-height: 100vh;
+    background: #08131b;
+    color-scheme: dark;
 }
