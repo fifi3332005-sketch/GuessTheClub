@@ -34,11 +34,11 @@
          console.log("Loaded clubs:", kluby.length);
 
      } catch (blad) {
-    console.error("Database error:", blad);
+         console.error("Database error:", blad);
 
-    document.getElementById("licznik").textContent =
-        "Error: " + blad.message;
-}
+         document.getElementById("licznik").textContent =
+             "Error: " + blad.message;
+     }
  }
 
 
@@ -367,10 +367,11 @@
      pasujace.forEach(klub => {
          const opcja = document.createElement("div");
          opcja.className = "podpowiedz";
+
          opcja.innerHTML = `
-            <span class="flaga-podpowiedzi">${pokazFlage(klub.kraj)}</span>
-            <span>${klub.nazwa}</span>
-            `;
+             <span class="flaga-podpowiedzi">${pokazFlage(klub.kraj)}</span>
+             <span>${klub.nazwa}</span>
+         `;
 
          // Kliknięcie nazwy automatycznie zatwierdza próbę.
          opcja.addEventListener("click", function () {
