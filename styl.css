@@ -1057,5 +1057,18 @@ body > * {
     }
 }
 
+/* ==========================================
+   NAPRAWA LISTY PODPOWIEDZI
+========================================== */
+
+.panel-wpisywania {
+    z-index: 20;
+}
+
+#podpowiedzi {
+    z-index: 100;
+}
+
+
 
 
