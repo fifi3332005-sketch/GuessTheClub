@@ -986,3 +986,35 @@ body {
     }
 }
 
+/* ==========================================
+   GREEN STADIUM - CIEMNY ŚRODEK + BLUR
+========================================== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background: radial-gradient(
+        ellipse 65% 55% at 50% 47%,
+        rgba(0, 8, 6, 0.78) 0%,
+        rgba(0, 12, 9, 0.58) 45%,
+        rgba(0, 18, 13, 0.20) 75%,
+        transparent 100%
+    );
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    pointer-events: none;
+}
+
+/* Elementy gry ponad warstwą przyciemnienia */
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+
