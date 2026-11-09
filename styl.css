@@ -1131,6 +1131,17 @@ button:active {
     }
 }
 
+/* MOBILE - UKRYCIE KAFELKÓW CLUB VALUE */
+
+@media screen and (max-width: 768px) {
+
+    #historia .wiersz > .komorka:nth-child(5) {
+        display: none !important;
+    }
+
+}
+
+
 
 
 
