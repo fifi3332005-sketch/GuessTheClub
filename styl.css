@@ -984,7 +984,10 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background-position: center center, 65% center;
+        background-size: cover;
+        background-position:
+            center center,
+            78% 58%;
     }
 }
 
