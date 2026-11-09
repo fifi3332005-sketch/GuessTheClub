@@ -14,7 +14,7 @@
  // Wczytywanie klubów z pliku JSON
  async function wczytajKluby() {
      try {
-         const odpowiedz = await fetch("./dane/kluby.json");
+         const odpowiedz = await fetch("./kluby.json");
 
          if (!odpowiedz.ok) {
              throw new Error("Could not load clubs database.");
