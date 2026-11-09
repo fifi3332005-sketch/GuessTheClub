@@ -20,8 +20,19 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="styl.css?v=8">
-    <script src="Skrypt.js?v=4" defer></script>
+    <script>
+    const wersja = Date.now();
+
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "styl.css?v=" + wersja;
+    document.head.appendChild(css);
+
+    const js = document.createElement("script");
+    js.src = "Skrypt.js?v=" + wersja;
+    js.defer = true;
+    document.head.appendChild(js);
+</script>
 </head>
 
 <body>
