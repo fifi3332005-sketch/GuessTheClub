@@ -963,13 +963,17 @@ html {
    TŁO GREEN STADIUM - DESKTOP I MOBILE
 ========================================== */
 
+
+/* TŁO STADIONU */
+
 body {
     background-image:
         linear-gradient(
             180deg,
-            rgba(3, 17, 14, 0.70) 0%,
-            rgba(3, 17, 14, 0.55) 45%,
-            rgba(3, 17, 14, 0.72) 100%
+            rgba(0, 10, 7, 0.12) 0%,
+            rgba(0, 15, 10, 0.20) 35%,
+            rgba(0, 10, 7, 0.38) 60%,
+            rgba(0, 10, 7, 0.08) 100%
         ),
         url("./tlo-stadion.png");
 
@@ -978,13 +982,12 @@ body {
     background-repeat: no-repeat;
 }
 
-/* Osobne kadrowanie na telefon */
-
 @media (max-width: 768px) {
     body {
         background-position: center center, 65% center;
     }
 }
+
 
 /* ==========================================
    GREEN STADIUM - CIEMNY ŚRODEK + BLUR
