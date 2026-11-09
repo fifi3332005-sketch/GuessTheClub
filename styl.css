@@ -993,31 +993,70 @@ body {
    GREEN STADIUM - CIEMNY ŚRODEK + BLUR
 ========================================== */
 
+
+/* ==========================================
+   ROZMYCIE I CIEMNY CIEŃ TYLKO W ŚRODKU
+========================================== */
+
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: 0;
 
-    background: radial-gradient(
-        ellipse 65% 55% at 50% 47%,
-        rgba(0, 8, 6, 0.78) 0%,
-        rgba(0, 12, 9, 0.58) 45%,
-        rgba(0, 18, 13, 0.20) 75%,
-        transparent 100%
+    background: rgba(0, 12, 9, 0.68);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    /* Stopniowe rozmycie tylko środkowej strefy */
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 25%,
+        black 43%,
+        black 68%,
+        transparent 84%
     );
 
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 25%,
+        black 43%,
+        black 68%,
+        transparent 84%
+    );
 
     pointer-events: none;
 }
 
-/* Elementy gry ponad warstwą przyciemnienia */
+/* Elementy gry pozostają ostre */
 
 body > * {
     position: relative;
     z-index: 1;
 }
+
+/* Telefon - dopasowanie strefy rozmycia */
+
+@media (max-width: 768px) {
+    body::before {
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 28%,
+            black 43%,
+            black 70%,
+            transparent 87%
+        );
+
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 28%,
+            black 43%,
+            black 70%,
+            transparent 87%
+        );
+    }
+}
+
 
 
