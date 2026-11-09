@@ -951,3 +951,13 @@ button:active {
         height: 14px;
     }
 }
+/* Tło obszarów Safari na telefonie */
+
+html {
+    min-height: 100%;
+    background-color: #08131b;
+}
+
+body {
+    min-height: 100vh;
+}
