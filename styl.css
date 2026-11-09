@@ -1,6 +1,5 @@
-
 /* ==========================================
-   1. CAŁA STRONA
+   1. USTAWIENIA GLOBALNE
 ========================================== */
 
 *,
@@ -10,210 +9,199 @@
 }
 
 body {
-    background:
-        radial-gradient(
-            ellipse at top,
-            rgba(25, 100, 65, 0.45),
-            transparent 65%
-        ),
-        linear-gradient(
-            180deg,
-            #08131b 0%,
-            #10251e 60%,
-            #06120e 100%
-        );
-
-    color: white;
-    font-family: Verdana, sans-serif;
-    text-align: center;
-
     min-height: 100vh;
     margin: 0;
     padding: 70px 20px;
+    background:
+        radial-gradient(ellipse at top, rgba(25, 100, 65, 0.45), transparent 65%),
+        linear-gradient(180deg, #08131b 0%, #10251e 60%, #06120e 100%);
+    color: white;
+    font-family: Verdana, sans-serif;
+    text-align: center;
 }
 
-
 /* ==========================================
-   2. TYTUŁ GRY
+   2. TYTUĹ GREEN STADIUM
 ========================================== */
 
-h1 {
-    font-family: "Comic Neue", cursive;
-    font-size: 60px;
-    font-weight: 400;
-
-    color: #1db954;
-    text-align: center;
-    letter-spacing: 1px;
-
-    margin: 0 0 35px;
+.tytul-gry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 0 auto 35px;
     padding: 0;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    text-align: center;
 }
 
+.tytul-gora {
+    display: block;
+    color: #fff;
+    font-size: 52px;
+    font-weight: 900;
+}
+
+.tytul-dol {
+    position: relative;
+    display: block;
+    color: #a3ff42;
+    font-size: 70px;
+    font-weight: 900;
+    white-space: nowrap;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tytul-dol::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 10px auto 0;
+    background: #a3ff42;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
 
 /* ==========================================
-   3. LICZNIK PRÓB
+   3. LICZNIK PRĂB
 ========================================== */
 
 #licznik {
+    margin: 0 0 60px;
+    color: #1db954;
     font-family: "Comic Neue", cursive;
     font-size: 23px;
     font-weight: 700;
-    color: #1db954;
-
-    margin: 0 0 60px;
 }
 
-
 /* ==========================================
-   4. PANEL WPISYWANIA KLUBU
+   4. WYSZUKIWARKA I BIAĹA LUPA
 ========================================== */
 
 .panel-wpisywania {
     position: relative;
-
     width: 800px;
     max-width: 75%;
     margin: 0 auto;
 }
 
-/* Pole tekstowe */
-
 .panel-wpisywania input {
     display: block;
-
     width: 100%;
-    padding: 22px 25px;
     margin: 0;
-
-    background-color: #142c27;
+    padding: 22px 25px 22px 65px;
+    background: #142c27;
     color: white;
-
     border: 2px solid #367a59;
     border-radius: 12px;
     outline: none;
-
     font-family: inherit;
     font-size: 20px;
     text-align: left;
-
     box-shadow: 0 0 20px rgba(0, 255, 120, 0.1);
-
-    transition:
-        border-color 0.3s,
-        box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .panel-wpisywania input::placeholder {
     color: #a1afa7;
 }
 
-/* Podświetlenie po kliknięciu */
-
 .panel-wpisywania input:focus {
     border-color: #4eff9a;
     box-shadow: 0 0 22px rgba(78, 255, 154, 0.35);
 }
 
+.ikona-lupy {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    color: white;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
 
 /* ==========================================
-   5. LISTA PODPOWIEDZI
+   5. LISTA PODPOWIEDZI Z FLAGAMI
 ========================================== */
 
 #podpowiedzi {
     position: absolute;
     top: calc(100% + 5px);
     left: 0;
-
+    z-index: 100;
     width: 100%;
     max-height: 240px;
-
     overflow-y: auto;
-
-    background-color: #142c27;
+    background: #142c27;
     border-radius: 12px;
-
-    z-index: 100;
     text-align: left;
 }
-
-/* Ukrycie pustej listy */
 
 #podpowiedzi:empty {
     display: none;
 }
 
-/* Pojedynczy klub */
-
-.podpowiedz {
-    padding: 15px 25px;
-
-    color: white;
-    font-family: "Comic Neue", cursive;
-    font-size: 18px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s;
-}
 .podpowiedz {
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 15px 25px;
+    color: white;
+    font-family: "Comic Neue", cursive;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.podpowiedz:hover {
+    background: #1db954;
 }
 
 .flaga-podpowiedzi {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    width: 30px;
     flex-shrink: 0;
-
+    width: 30px;
     font-size: 24px;
     line-height: 1;
 }
 
-/* Podświetlenie propozycji */
-
-.podpowiedz:hover {
-    background-color: #1db954;
-    color: white;
-}
-
-
 /* ==========================================
-   6. NAGŁÓWKI I HISTORIA PRÓB
+   6. SIATKA NAGĹĂWKĂW I PRĂB - DESKTOP
 ========================================== */
-
-/* Sześć kolumn: nazwa + pięć parametrów */
 
 .naglowki,
 .wiersz {
     display: grid;
-
-    grid-template-columns:
-        220px
-        repeat(5, minmax(0, 1fr));
-
+    grid-template-columns: 220px repeat(5, minmax(0, 1fr));
+    align-items: center;
     gap: 12px;
-
     width: 1200px;
     max-width: 100%;
-
-    margin-left: auto;
     margin-right: auto;
-
-    align-items: center;
+    margin-left: auto;
 }
-
-/* Nagłówki tabeli */
 
 .naglowki {
     margin-top: 100px;
     margin-bottom: 10px;
-
+    padding: 12px 15px;
+    background: rgba(8, 55, 40, 0.28);
+    border: 1px solid rgba(80, 223, 137, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     font-size: 14px;
     font-weight: 700;
     text-align: center;
@@ -227,196 +215,161 @@ h1 {
     text-align: left;
 }
 
-/* Historia prób */
+.naglowki .naglowek {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.naglowki .naglowek:first-child {
+    justify-content: flex-start;
+}
+
+.naglowek svg {
+    flex-shrink: 0;
+    width: 27px;
+    height: 27px;
+    color: white;
+    stroke-width: 2;
+}
+
+.naglowek > svg {
+    width: 30px;
+    height: 30px;
+}
 
 #historia {
     width: 100%;
     margin: 10px auto 40px;
 }
 
-/* Pojedyncza próba */
-
 .wiersz {
     margin-bottom: 10px;
+    padding: 7px 10px;
+    background: rgba(8, 55, 40, 0.28);
+    border: 1px solid rgba(80, 223, 137, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-
 /* ==========================================
-   7. NAZWA WYBRANEGO KLUBU
+   7. NAZWY KLUBĂW I KAFELKI
 ========================================== */
 
 .nazwa-klubu {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     min-width: 0;
-
     color: white;
     font-family: "Comic Neue", cursive;
     font-size: 24px;
     font-weight: 700;
-
+    line-height: 1.2;
     text-align: left;
     overflow-wrap: anywhere;
-    line-height: 1.2;
 }
-
-
-/* ==========================================
-   8. KAFELKI WYNIKÓW
-========================================== */
 
 .komorka {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 10px;
-
     min-width: 0;
     min-height: 70px;
     padding: 15px;
-
-    background-color: rgba(10, 30, 35, 0.85);
+    background: rgba(10, 30, 35, 0.85);
     color: white;
-
     border: 1px solid #54d88a;
     border-radius: 50px;
-
     font-size: 17px;
     font-weight: 700;
     text-align: center;
 }
 
-/* Poprawna wartość */
-
 .komorka.zielony {
-    background-color: #308452;
+    background: #308452;
     border: 2px solid #50df89;
-    color: white;
 }
 
-/* Niepoprawna wartość */
-
-.komorka.czerwony {
-    background-color: #842f3c;
-    border: 2px solid #e45b6d;
-    color: white;
-}
-
-/* Odległość */
-
+.komorka.czerwony,
 .komorka.odleglosc {
-    background-color: #842f3c;
+    background: #842f3c;
     border: 2px solid #e45b6d;
-    color: white;
 }
 
-
-/* ==========================================
-   9. STRZAŁKI SVG
-========================================== */
+.wiersz .flaga {
+    font-size: 38px;
+    line-height: 1;
+}
 
 .strzalka {
     display: block;
-
+    flex-shrink: 0;
     width: 42px;
     height: 42px;
-
-    flex-shrink: 0;
 }
-
-/* Strzałka w dół */
 
 .strzalka.dol {
     transform: rotate(180deg);
 }
 
-
 /* ==========================================
-   10. PRZYCISKI PLAY AGAIN
+   8. PRZYCISKI I EKRANY KOĹCOWE
 ========================================== */
 
 button {
-    background-color: #1db954;
+    margin: 12px;
+    padding: 18px 40px;
+    background: #1db954;
     color: white;
-
+    border: none;
+    border-radius: 50px;
     font-family: "Comic Neue", cursive;
     font-size: 20px;
     font-weight: 700;
-
-    padding: 18px 40px;
-    margin: 12px;
-
-    border: none;
-    border-radius: 50px;
-
     cursor: pointer;
-
-    transition:
-        background-color 0.3s,
-        transform 0.3s,
-        box-shadow 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-
-/* Najechanie myszką */
 
 button:hover {
-    background-color: #35da83;
+    background: #35da83;
     transform: translateY(-3px);
-
     box-shadow: 0 8px 30px rgba(0, 255, 120, 0.45);
 }
-
-/* Kliknięcie */
 
 button:active {
     transform: translateY(1px);
 }
 
-
-/* ==========================================
-   11. EKRANY KOŃCOWE
-========================================== */
-
 .ekran-wygranej,
 .ekran-przegranej {
     position: fixed;
     inset: 0;
-
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 15px;
-
-    background-color: rgba(0, 0, 0, 0.85);
-
-    z-index: 1000;
-
+    background: rgba(0, 0, 0, 0.85);
     animation: pojawienie 0.5s ease;
 }
 
-
-/* ==========================================
-   12. EKRAN ZWYCIĘSTWA
-========================================== */
+.okno-wygranej,
+.okno-przegranej {
+    padding: 50px;
+    border: 2px solid;
+    border-radius: 20px;
+    text-align: center;
+}
 
 .okno-wygranej {
-    background: linear-gradient(
-        135deg,
-        #102a20,
-        #174d32
-    );
-
-    padding: 50px;
-
-    border: 2px solid #50df89;
-    border-radius: 20px;
-
-    text-align: center;
-
+    background: linear-gradient(135deg, #102a20, #174d32);
+    border-color: #50df89;
     box-shadow: 0 0 60px rgba(0, 255, 120, 0.3);
 }
 
@@ -430,25 +383,9 @@ button:active {
     font-size: 20px;
 }
 
-
-/* ==========================================
-   13. EKRAN PORAŻKI
-========================================== */
-
 .okno-przegranej {
-    background: linear-gradient(
-        135deg,
-        #35121a,
-        #641f2a
-    );
-
-    padding: 50px;
-
-    border: 2px solid #e45b6d;
-    border-radius: 20px;
-
-    text-align: center;
-
+    background: linear-gradient(135deg, #35121a, #641f2a);
+    border-color: #e45b6d;
     box-shadow: 0 0 60px rgba(255, 60, 80, 0.3);
 }
 
@@ -467,51 +404,82 @@ button:active {
     font-size: 19px;
 }
 
+@keyframes pojawienie {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 /* ==========================================
-   14. ANIMACJE
+   9. KOMPAKTOWY DESKTOP
 ========================================== */
 
-@keyframes pojawienie {
-    from {
-        opacity: 0;
+@media (min-width: 769px) {
+    body {
+        padding-top: 25px;
+        padding-bottom: 15px;
     }
 
-    to {
-        opacity: 1;
+    .tytul-gry { margin-bottom: 12px; }
+    .tytul-gora { font-size: 45px; }
+    .tytul-dol { font-size: 60px; }
+    .tytul-dol::after { margin-top: 5px; }
+
+    #licznik {
+        margin-top: 8px;
+        margin-bottom: 25px;
+    }
+
+    .panel-wpisywania input {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    .naglowki {
+        margin-top: 60px;
+    }
+
+    .wiersz { margin-bottom: 7px; }
+
+    .komorka {
+        min-height: 60px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #historia {
+        margin-top: 7px;
+        margin-bottom: 15px;
     }
 }
 
-
 /* ==========================================
-   15. WERSJA MOBILNA
-   WSZYSTKIE KOLUMNY W JEDNEJ LINII
+   10. WERSJA MOBILNA - PIÄÄ KOLUMN
 ========================================== */
 
 @media (max-width: 768px) {
-
-    /* Cała strona */
-
     body {
         padding: 35px 8px;
         overflow-x: hidden;
     }
 
-    /* Tytuł */
-
-    h1 {
-        font-size: 28px;
-        margin-bottom: 25px;
+    .tytul-gry {
+        margin-bottom: 30px;
+        letter-spacing: -0.5px;
     }
 
-    /* Licznik */
+    .tytul-gora { font-size: 31px; }
+    .tytul-dol { font-size: clamp(28px, 8vw, 43px); }
+
+    .tytul-dol::after {
+        width: 55px;
+        height: 3px;
+        margin-top: 8px;
+    }
 
     #licznik {
         font-size: 22px;
         margin-bottom: 45px;
     }
-
-    /* Panel wpisywania */
 
     .panel-wpisywania {
         width: 100%;
@@ -519,38 +487,47 @@ button:active {
     }
 
     .panel-wpisywania input {
-        width: 100%;
-        padding: 16px;
+        padding: 16px 16px 16px 48px;
         font-size: 17px;
     }
 
-    /* Podpowiedzi */
+    .ikona-lupy {
+        left: 16px;
+        width: 21px;
+        height: 21px;
+    }
 
     .podpowiedz {
         padding: 13px 16px;
         font-size: 16px;
     }
 
-    /* Sześć kolumn w jednej linii */
-
+    /* Nazwa, flaga, miasto, pojemnoĹÄ, odlegĹoĹÄ */
     .naglowki,
     .wiersz {
         width: 100%;
         max-width: 100%;
-
         grid-template-columns:
-            minmax(0, 1.5fr)
-            repeat(5, minmax(0, 1fr));
-
-        gap: 3px;
+            minmax(0, 1.4fr)
+            minmax(0, 0.85fr)
+            minmax(0, 1.35fr)
+            minmax(0, 1.15fr)
+            minmax(0, 1.15fr);
+        gap: 4px;
     }
 
-    /* Nagłówki */
+    /* Value pozostaje widoczne tylko na PC. */
+    .naglowki > :nth-child(5),
+    .wiersz > :nth-child(5),
+    .wiersz .wartosc-klubu {
+        display: none !important;
+    }
 
     .naglowki {
-        margin-top: 75px;
+        margin-top: 60px;
         margin-bottom: 8px;
-
+        padding: 10px 4px;
+        border-radius: 12px;
         font-size: 9px;
         line-height: 1.2;
     }
@@ -559,70 +536,100 @@ button:active {
         overflow-wrap: anywhere;
     }
 
-    /* Historia */
+    .naglowki .naglowek {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        min-width: 0;
+        text-align: center;
+    }
+
+    .naglowki .naglowek:first-child {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .naglowki .naglowek span {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .naglowek svg { width: 19px; height: 19px; }
+    .naglowek > svg { width: 21px; height: 21px; }
 
     #historia {
         width: 100%;
         max-width: 100%;
-
         margin: 8px auto 30px;
     }
 
     .wiersz {
-        margin-bottom: 8px;
+        align-items: stretch;
+        margin-bottom: 6px;
+        padding: 5px 3px;
+        border-radius: 12px;
     }
 
-    /* Nazwa klubu */
-
-    .nazwa-klubu {
+    .wiersz .nazwa-klubu {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
         font-size: 10px;
         line-height: 1.2;
-
         white-space: normal;
         overflow-wrap: anywhere;
-
-        transform: none;
     }
 
-    /* Kafelki */
-
-    .komorka {
-        min-width: 0;
-        min-height: 42px;
-
-        padding: 5px 2px;
-        gap: 2px;
-
-        font-size: 9px;
-        line-height: 1.2;
-
-        border-radius: 12px;
-
+    .wiersz .komorka {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+        min-width: 0;
+        padding: 3px 2px;
+        gap: 2px;
+        overflow: hidden;
+        border-radius: 12px;
+        font-size: 10px;
+        line-height: 1.15;
         overflow-wrap: anywhere;
     }
 
-    /* Strzałki */
-
-    .strzalka {
-        width: 16px;
-        height: 16px;
-    }
-
-    /* Flagi */
-
-    .flaga {
-        font-size: 22px;
+    .wiersz .flaga {
+        font-size: 28px;
         line-height: 1;
     }
 
-    /* Okna końcowe */
+    .wiersz .komorka:nth-child(3) {
+        white-space: nowrap;
+        font-size: 10px;
+    }
+
+    .wiersz .komorka:nth-child(4),
+    .wiersz .komorka:nth-child(6) {
+        font-size: 9px;
+    }
+
+    .wiersz .komorka:nth-child(4) span,
+    .wiersz .komorka:nth-child(6) span {
+        white-space: nowrap;
+    }
+
+    .wiersz .strzalka {
+        flex-shrink: 0;
+        width: 15px;
+        height: 15px;
+    }
 
     .okno-wygranej,
     .okno-przegranej {
         width: 90%;
         max-width: 450px;
-
         padding: 25px 15px;
     }
 
@@ -632,594 +639,16 @@ button:active {
     }
 }
 
-
 /* ==========================================
-   16. BARDZO MAŁE EKRANY
+   11. BARDZO MAĹE TELEFONY
 ========================================== */
 
 @media (max-width: 380px) {
-
     .naglowki,
-    .wiersz {
-        gap: 2px;
-    }
+    .wiersz { gap: 4px; }
 
-    .naglowki {
-        font-size: 8px;
-    }
-
-    .nazwa-klubu {
-        font-size: 9px;
-    }
-
-    .komorka {
-        font-size: 8px;
-        padding: 4px 1px;
-        border-radius: 9px;
-    }
-
-    .strzalka {
-        width: 14px;
-        height: 14px;
-    }
-
-    .flaga {
-        font-size: 18px;
-    }
+    .nazwa-klubu { font-size: 9px; }
+    .wiersz .komorka { border-radius: 9px; }
+    .wiersz .flaga { font-size: 28px; }
+    .wiersz .strzalka { width: 15px; height: 15px; }
 }
-
-/* Biała lupa w polu wyszukiwania */
-
-.ikona-lupy {
-    position: absolute;
-    left: 22px;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 25px;
-    height: 25px;
-
-    color: white;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.panel-wpisywania input {
-    padding-left: 65px;
-}
-
-@media (max-width: 768px) {
-    .ikona-lupy {
-        left: 16px;
-        width: 21px;
-        height: 21px;
-    }
-
-    .panel-wpisywania input {
-        padding-left: 48px;
-    }
-}
-
-/* ==========================================
-   IKONY NAGŁÓWKÓW TABELI
-========================================== */
-
-.naglowki .naglowek {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-align: left;
-}
-
-.naglowki .naglowek:first-child {
-    justify-content: flex-start;
-}
-
-.naglowek svg {
-    width: 27px;
-    height: 27px;
-    flex-shrink: 0;
-    color: white;
-    stroke-width: 2;
-}
-
-/* Wersja mobilna */
-
-@media (max-width: 768px) {
-
-    .naglowki .naglowek {
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        text-align: center;
-    }
-
-    .naglowki .naglowek:first-child {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .naglowek svg {
-        width: 19px;
-        height: 19px;
-    }
-}
-
-.naglowek > svg {
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .naglowek > svg {
-        width: 21px;
-        height: 21px;
-    }
-}
-
-/* ==========================================
-   TYTUŁ GRY - GREEN STADIUM
-========================================== */
-
-.tytul-gry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-
-    margin: 0 auto 35px;
-    padding: 0;
-
-    font-family: Arial, sans-serif;
-    font-style: italic;
-    font-weight: 900;
-    line-height: 1.05;
-    text-align: center;
-    letter-spacing: -1.5px;
-}
-
-/* Biała pierwsza linia */
-
-.tytul-gora {
-    display: block;
-    color: #ffffff;
-    font-size: 52px;
-    font-weight: 900;
-}
-
-/* Neonowozielona druga linia */
-
-.tytul-dol {
-    display: block;
-    position: relative;
-
-    color: #a3ff42;
-    font-size: 70px;
-    font-weight: 900;
-    white-space: nowrap;
-
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Zielona kreska pod tytułem */
-
-.tytul-dol::after {
-    content: "";
-    display: block;
-
-    width: 80px;
-    height: 4px;
-
-    margin: 10px auto 0;
-
-    background-color: #a3ff42;
-    border-radius: 10px;
-
-    transform: rotate(-3deg);
-}
-
-/* ==========================================
-   WERSJA MOBILNA
-========================================== */
-
-@media (max-width: 768px) {
-
-    .tytul-gry {
-        margin-bottom: 30px;
-        letter-spacing: -0.5px;
-    }
-
-    .tytul-gora {
-        font-size: 31px;
-    }
-
-    .tytul-dol {
-        font-size: clamp(28px, 8vw, 43px);
-    }
-
-    .tytul-dol::after {
-        width: 55px;
-        height: 3px;
-        margin-top: 8px;
-    }
-}
-
-/* ==========================================
-   KOMPAKTOWY UKŁAD DESKTOP
-   5 PRÓB NA JEDNYM EKRANIE
-========================================== */
-
-@media (min-width: 769px) {
-
-    /* Przesunięcie całej gry wyżej */
-    body {
-        padding-top: 25px;
-        padding-bottom: 15px;
-    }
-
-    /* Tytuł bliżej górnej krawędzi */
-    .tytul-gry {
-        margin-bottom: 12px;
-    }
-
-    .tytul-gora {
-        font-size: 45px;
-    }
-
-    .tytul-dol {
-        font-size: 60px;
-    }
-
-    /* Krótsza kreska pod tytułem */
-    .tytul-dol::after {
-        margin-top: 5px;
-    }
-
-    /* Licznik bliżej tytułu i wyszukiwarki */
-    #licznik {
-        margin-top: 8px;
-        margin-bottom: 25px;
-    }
-
-    /* Nieco niższe pole wpisywania */
-    .panel-wpisywania input {
-        padding-top: 17px;
-        padding-bottom: 17px;
-    }
-
-    /* Mniejszy odstęp przed nagłówkami */
-    .naglowki {
-        margin-top: 40px;
-        margin-bottom: 10px;
-    }
-
-    /* Mniejsze przerwy między próbami */
-    .wiersz {
-        margin-bottom: 7px;
-    }
-
-    /* Nieco niższe kafelki */
-    .komorka {
-        min-height: 60px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    /* Historia prób */
-    #historia {
-        margin-top: 7px;
-        margin-bottom: 15px;
-    }
-}
-
-/* ==========================================
-   DELIKATNA TABELA NAGŁÓWKÓW
-========================================== */
-
-.naglowki {
-    background: rgba(8, 55, 40, 0.28);
-
-    border: 1px solid rgba(80, 223, 137, 0.22);
-    border-radius: 16px;
-
-    padding: 12px 15px;
-
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
-/* Wersja mobilna */
-
-@media (max-width: 768px) {
-    .naglowki {
-        padding: 10px 4px;
-        border-radius: 12px;
-    }
-}
-
-/* ==========================================
-   ODSTĘP NAD NAGŁÓWKAMI
-========================================== */
-
-@media (min-width: 769px) {
-    .naglowki {
-        margin-top: 60px;
-    }
-}
-
-
-/* ==========================================
-   DELIKATNA RAMKA KAŻDEJ PRÓBY
-========================================== */
-
-.wiersz {
-    background: rgba(8, 55, 40, 0.28);
-
-    border: 1px solid rgba(80, 223, 137, 0.22);
-    border-radius: 16px;
-
-    padding: 7px 10px;
-
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
-/* Wersja mobilna */
-
-@media (max-width: 768px) {
-    .naglowki {
-        margin-top: 85px;
-    }
-
-    .wiersz {
-        padding: 5px 3px;
-        border-radius: 12px;
-    }
-}
-
-/* Większe flagi w historii prób */
-
-.wiersz .flaga {
-    font-size: 38px;
-    line-height: 1;
-}
-
-/* Wersja mobilna */
-
-@media (max-width: 768px) {
-    .wiersz .flaga {
-        font-size: 28px;
-    }
-}
-
-
-
-/* ==========================================
-   MOBILE - 5 KOLUMN BEZ CLUB VALUE
-========================================== */
-
-@media (max-width: 768px) {
-
-    /* Ukrycie Value w nagłówkach i wynikach */
-    .naglowki > :nth-child(5),
-    .wiersz > :nth-child(5) {
-        display: none;
-    }
-
-    /* Pięć widocznych kolumn */
-    .naglowki,
-    .wiersz {
-        grid-template-columns:
-            minmax(0, 1.4fr)   /* Club Name */
-            minmax(0, 0.85fr)  /* Country */
-            minmax(0, 1.35fr)  /* City */
-            minmax(0, 1.15fr)  /* Capacity */
-            minmax(0, 1.15fr); /* Distance */
-
-        gap: 4px;
-    }
-
-    /* Nagłówek Country w jednej linii */
-    .naglowki .naglowek {
-        min-width: 0;
-    }
-
-    .naglowki .naglowek span {
-        font-size: 9px;
-        white-space: nowrap;
-    }
-
-    /* Stała wysokość wyników */
-    .wiersz {
-        align-items: stretch;
-    }
-
-    .wiersz .komorka {
-        height: 64px;
-        min-height: 64px;
-        max-height: 64px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        padding: 3px 2px;
-        gap: 3px;
-
-        font-size: 10px;
-        line-height: 1.15;
-        overflow: hidden;
-    }
-
-    /* Nazwa klubu */
-    .wiersz .nazwa-klubu {
-        height: 64px;
-        min-height: 64px;
-        max-height: 64px;
-
-        display: flex;
-        align-items: center;
-
-        font-size: 10px;
-        line-height: 1.2;
-        overflow-wrap: anywhere;
-    }
-
-    /* Flaga */
-    .wiersz .flaga {
-        font-size: 28px;
-        line-height: 1;
-    }
-
-    /* City - jedna linia */
-    .wiersz .komorka:nth-child(3) {
-        white-space: nowrap;
-        font-size: 10px;
-    }
-
-    /* Capacity i Distance - liczba nad strzałką */
-    .wiersz .komorka:nth-child(4),
-    .wiersz .komorka:nth-child(6) {
-        flex-direction: column;
-    }
-
-    .wiersz .komorka:nth-child(4) span,
-    .wiersz .komorka:nth-child(6) span {
-        white-space: nowrap;
-    }
-
-    /* Strzałki pod liczbami */
-    .wiersz .strzalka {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-    }
-}
-/* ==========================================
-   MOBILE - UKRYCIE CAŁEJ KOLUMNY VALUE
-========================================== */
-
-@media screen and (max-width: 768px) {
-
-    /* Usuń nagłówek Value */
-    .naglowki > div:nth-child(5) {
-        display: none !important;
-    }
-
-    /* Usuń kafelki Value z każdej próby */
-    .wiersz > div:nth-child(5) {
-        display: none !important;
-    }
-
-    /* Układ pozostałych pięciu kolumn */
-    .naglowki,
-    .wiersz {
-        grid-template-columns:
-            minmax(0, 1.4fr)
-            minmax(0, 0.85fr)
-            minmax(0, 1.35fr)
-            minmax(0, 1.15fr)
-            minmax(0, 1.15fr) !important;
-    }
-}
-
-/* MOBILE - UKRYCIE KAFELKÓW CLUB VALUE */
-
-@media screen and (max-width: 768px) {
-
-    #historia .wiersz > .komorka:nth-child(5) {
-        display: none !important;
-    }
-
-}
-/* Ukrycie Value wyłącznie na telefonie */
-
-@media (max-width: 768px) {
-    .wiersz .wartosc-klubu {
-        display: none !important;
-    }
-}
-
-/* ==========================================
-   MOBILE - KOMPAKTOWE WIERSZE PRÓB
-========================================== */
-
-@media (max-width: 768px) {
-
-    /* Wysokość całego wiersza próby */
-    .wiersz {
-        align-items: stretch;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    /* Stała wysokość kafelków */
-    .wiersz .komorka {
-        height: 48px;
-        min-height: 48px;
-        max-height: 48px;
-
-        padding: 3px 2px;
-        gap: 2px;
-
-        justify-content: center;
-    }
-
-    /* Nazwa klubu - ta sama wysokość */
-    .wiersz .nazwa-klubu {
-        height: 48px;
-        min-height: 48px;
-        max-height: 48px;
-    }
-
-    /* Mniejsze wartości Capacity i Distance */
-    .wiersz .komorka:nth-child(4),
-    .wiersz .komorka:nth-child(6) {
-        font-size: 9px;
-    }
-
-    /* Liczby zawsze w jednej linii */
-    .wiersz .komorka:nth-child(4) span,
-    .wiersz .komorka:nth-child(6) span {
-        white-space: nowrap;
-    }
-
-    /* Mniejsze strzałki */
-    .wiersz .strzalka {
-        width: 15px;
-        height: 15px;
-        flex-shrink: 0;
-    }
-
-    /* Zmniejszenie odstępów między próbami */
-    .wiersz {
-        margin-bottom: 6px;
-    }
-}
-
-
-/* MOBILE - MNIEJSZY ODSTĘP NAD NAGŁÓWKAMI */
-
-@media screen and (max-width: 768px) {
-    .naglowki {
-        margin-top:  60px !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
