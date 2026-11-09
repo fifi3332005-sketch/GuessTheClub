@@ -1148,6 +1148,64 @@ button:active {
     }
 }
 
+/* ==========================================
+   MOBILE - KOMPAKTOWE WIERSZE PRÓB
+========================================== */
+
+@media (max-width: 768px) {
+
+    /* Wysokość całego wiersza próby */
+    .wiersz {
+        align-items: stretch;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    /* Stała wysokość kafelków */
+    .wiersz .komorka {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+
+        padding: 3px 2px;
+        gap: 2px;
+
+        justify-content: center;
+    }
+
+    /* Nazwa klubu - ta sama wysokość */
+    .wiersz .nazwa-klubu {
+        height: 48px;
+        min-height: 48px;
+        max-height: 48px;
+    }
+
+    /* Mniejsze wartości Capacity i Distance */
+    .wiersz .komorka:nth-child(4),
+    .wiersz .komorka:nth-child(6) {
+        font-size: 9px;
+    }
+
+    /* Liczby zawsze w jednej linii */
+    .wiersz .komorka:nth-child(4) span,
+    .wiersz .komorka:nth-child(6) span {
+        white-space: nowrap;
+    }
+
+    /* Mniejsze strzałki */
+    .wiersz .strzalka {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+    }
+
+    /* Zmniejszenie odstępów między próbami */
+    .wiersz {
+        margin-bottom: 6px;
+    }
+}
+
+
 
 
 
