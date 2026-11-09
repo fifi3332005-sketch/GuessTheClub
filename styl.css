@@ -1140,6 +1140,13 @@ button:active {
     }
 
 }
+/* Ukrycie Value wyłącznie na telefonie */
+
+@media (max-width: 768px) {
+    .wiersz .wartosc-klubu {
+        display: none !important;
+    }
+}
 
 
 
