@@ -14,7 +14,7 @@
  // Wczytywanie klubów z pliku JSON
  async function wczytajKluby() {
      try {
-         const odpowiedz = await fetch("./kluby.json");
+         const odpowiedz = await fetch("./dane/kluby.json");
 
          if (!odpowiedz.ok) {
              throw new Error("Could not load clubs database.");
@@ -174,7 +174,7 @@
              </div>
              <div class="komorka zielony">${wybor.miasto}</div>
              <div class="komorka zielony">${formatujPojemnosc(wybor.pojemnosc)}</div>
-             <div class="komorka zielony">${formatujWartosc(wybor.wartosc_klubu)}</div>
+             <div class="komorka zielony wartosc-klubu">${formatujWartosc(wybor.wartosc_klubu)}</div>
              <div class="komorka zielony">0 km</div>
          `;
 
@@ -222,7 +222,7 @@
                  ${rysujStrzalke(strzalkaPojemnosc)}
              </div>
 
-             <div class="komorka ${kolorWartosci}">
+             <div class="komorka ${kolorWartosci} wartosc-klubu">
                  <span>${formatujWartosc(wybor.wartosc_klubu)}</span>
                  ${rysujStrzalke(strzalkaWartosc)}
              </div>
