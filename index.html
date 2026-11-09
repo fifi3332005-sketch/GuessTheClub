@@ -1,6 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,40 +11,126 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="styl.css">
+    <script src="Skrypt.js" defer></script>
 </head>
 
 <body>
 
-    <h1>Guess the football club!</h1>
+    <h1 class="tytul-gry">
+    <span class="tytul-gora">Guess the</span>
+    <span class="tytul-dol">Football Club</span>
+</h1>
 
-    <p id="licznik">5 Guesses left</p>
+    <p id="licznik" aria-live="polite">5 Guesses left</p>
 
+    
     <div class="panel-wpisywania">
 
+        <svg class="ikona-lupy"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true">
+
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+
+        </svg>
+
         <input type="text"
-               id="nazwaKlubu"
-               placeholder="Enter the club name..."
-               autocomplete="off">
+            id="nazwaKlubu"
+            placeholder="Enter the club name..."
+            autocomplete="off">
 
         <div id="podpowiedzi"></div>
 
     </div>
 
-    <div class="naglowki">
-        <div>Club Name</div>
-        <div>Country</div>
-        <div>City</div>
-        <div>Stadium Capacity</div>
-        <div>Club Value</div>
-        <div>Distance</div>
+
+    
+<div class="naglowki">
+
+    <div class="naglowek">
+        <i data-lucide="shield"></i>
+        <span>Club Name</span>
     </div>
+
+    <div class="naglowek">
+        <i data-lucide="flag"></i>
+        <span>Country</span>
+    </div>
+
+    <div class="naglowek">
+        <i data-lucide="map-pin"></i>
+        <span>City</span>
+    </div>
+
+    
+    <div class="naglowek">
+        <svg viewBox="0 0 32 32" fill="none"
+            stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <ellipse cx="16" cy="12" rx="12" ry="6"/>
+            <path d="M4 12v10c0 3.5 5.4 6 12 6s12-2.5 12-6V12"/>
+            <ellipse cx="16" cy="12" rx="6.5" ry="3"/>
+            <path d="M9 10l-3-4M23 10l3-4"/>
+            <path d="M12 12h8M16 9v6"/>
+            <path d="M10 21h12"/>
+        </svg>
+        <span>Capacity</span>
+    </div>
+
+
+    
+<div class="naglowek">
+    <svg viewBox="0 0 32 32" fill="none"
+         stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+        <ellipse cx="16" cy="7" rx="11" ry="4"/>
+        <path d="M5 7v6c0 2.2 4.9 4 11 4s11-1.8 11-4V7"/>
+        <path d="M5 13v6c0 2.2 4.9 4 11 4s11-1.8 11-4v-6"/>
+        <path d="M5 19v6c0 2.2 4.9 4 11 4s11-1.8 11-4v-6"/>
+    </svg>
+    <span>Value</span>
+</div>
+
+
+    
+<div class="naglowek">
+    <svg viewBox="0 0 32 32" fill="none"
+         stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+        <path d="M12 9c0 4-5 9-5 9S2 13 2 9a5 5 0 0 1 10 0Z"/>
+        <circle cx="7" cy="9" r="1.5"/>
+        <path d="M30 7c0 4-5 9-5 9s-5-5-5-9a5 5 0 0 1 10 0Z"/>
+        <circle cx="25" cy="7" r="1.5"/>
+        <path d="M8 22c4-5 9 3 14-2s-2-5 3-9"
+              stroke-dasharray="2.5 3"/>
+    </svg>
+    <span>Distance</span>
+</div>
+
+
+</div>
+
 
     <div id="historia"></div>
 
-    <script src="Skrypt.js"></script>
-
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>
