@@ -1205,13 +1205,15 @@ button:active {
     }
 }
 
+
 /* MOBILE - MNIEJSZY ODSTĘP NAD NAGŁÓWKAMI */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .naglowki {
-        margin-top: 57px;
+        margin-top: 30px !important;
     }
 }
+
 
 
 
