@@ -3,7 +3,7 @@
  // 2. STAN GRY
  // ==========================================
 
- const MAKS_PROB = 5;
+ const MAKS_PROB = 7;
 
  let kluby = [];
  let zagadka = null;
@@ -103,7 +103,15 @@
          "Germany": "🇩🇪",
          "Italy": "🇮🇹",
          "France": "🇫🇷",
-         "Monaco": "🇲🇨"
+         "Monaco": "🇲🇨",
+         "Norway": "🇳🇴",
+         "Sweden": "🇸🇪",
+        "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "Ukraine": "🇺🇦",
+        "Denmark": "🇩🇰",
+        "Netherlands": "🇳🇱",
+        "Belgium": "🇧🇪",
+        "Portugal": "🇵🇹"
      };
 
      return flagi[kraj] || "🏳️";
@@ -244,7 +252,7 @@
      document.getElementById("historia").prepend(wiersz);
 
      if (trafienie) {
-         setTimeout(pokazWygrana, 1000);
+         setTimeout(pokazWygrana, 1300);
      }
 
      return trafienie;
@@ -286,7 +294,7 @@
      // Koniec po pięciu nieudanych próbach.
      if (proba > MAKS_PROB) {
          koniecGry = true;
-         setTimeout(pokazPrzegrana, 1000);
+         setTimeout(pokazPrzegrana, 1300);
      }
  }
 
