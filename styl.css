@@ -100,6 +100,33 @@ body {
     font-weight: 700;
 }
 
+/* LICZNIK PRÓB - GREEN STADIUM */
+
+
+/* LICZNIK PRÓB - STYL NAGŁÓWKÓW */
+
+#licznik {
+    display: inline-block;
+    padding: 12px 28px;
+
+    background: rgba(8, 55, 40, 0.28);
+    border: 1px solid rgba(80, 223, 137, 0.22);
+    border-radius: 16px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    color: #a1afa7;
+}
+
+/* Zielona cyfra */
+#licznik::first-letter {
+    color: #1db954;
+}
+
+
 
 /* ==========================================
    4. POLE WYSZUKIWANIA I LUPA
@@ -1071,7 +1098,6 @@ body > * {
 #podpowiedzi {
     z-index: 100;
 }
-
 
 
 
