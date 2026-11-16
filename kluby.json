@@ -1252,5 +1252,322 @@
     "lat": 47.95916,
     "lon": 0.2231,
     "logo": null
-  }
+  },
+  {
+    "ID": 115,
+    "nazwa": "FK Bodø/Glimt",
+    "kraj": "Norway",
+    "miasto": "Bodø",
+    "pojemnosc": 8500,
+    "wartosc_klubu": 81.28,
+    "lat": 67.27670,
+    "lon": 14.38448
+  },
+  {
+    "ID": 116,
+    "nazwa": "Viking FK",
+    "kraj": "Norway",
+    "miasto": "Stavanger",
+    "pojemnosc": 15900,
+    "wartosc_klubu": 46.15,
+    "lat": 58.91459,
+    "lon": 5.73100
+  },
+  { "ID": 117,
+    "nazwa": "Molde FK",
+    "kraj": "Norway",
+    "miasto": "Molde",
+    "pojemnosc": 11800,
+    "wartosc_klubu": 32.75,
+    "lat": 62.73339,
+    "lon": 7.14807
+  },
+  {
+    "ID": 118,
+    "nazwa": "Malmö FF",
+    "kraj": "Sweden",
+    "miasto": "Malmö",
+    "pojemnosc": 22500,
+    "wartosc_klubu": 35.33,
+    "lat": 55.58361,
+    "lon": 12.98778
+  },
+  {
+    "ID" : 119,
+    "nazwa": "Djurgårdens IF",
+    "kraj": "Sweden",
+    "miasto": "Stockholm",
+    "pojemnosc": 30000,
+    "wartosc_klubu": 27.60,
+    "lat": 59.29081,
+    "lon": 18.08534
+  },
+  {
+    "ID":120,
+    "nazwa": "Celtic FC",
+    "kraj": "Scotland",
+    "miasto": "Glasgow",
+    "pojemnosc": 60411,
+    "wartosc_klubu": 131.30,
+    "lat": 55.84972,
+    "lon": -4.20556
+  },
+  {
+    "ID":121,
+    "nazwa": "Rangers FC",
+    "kraj": "Scotland",
+    "miasto": "Glasgow",
+    "pojemnosc": 50987,
+    "wartosc_klubu": 124.30,
+    "lat": 55.85306,
+    "lon": -4.30917
+  },
+  {
+    "ID":122,
+    "nazwa": "Hibernian FC",
+    "kraj": "Scotland",
+    "miasto": "Edinburgh",
+    "pojemnosc": 20250,
+    "wartosc_klubu": 19.25,
+    "lat": 55.96167,
+    "lon": -3.16556
+  },
+  {
+    "ID":123,
+    "nazwa": "Shakhtar Donetsk",
+    "kraj": "Ukraine",
+    "miasto": "Donetsk",
+    "pojemnosc": 34725,
+    "wartosc_klubu": 179.05,
+    "lat": 49.77528,
+    "lon": 24.02778
+  },
+  {
+    "ID":124,
+    "nazwa": "Dynamo Kyiv",
+    "kraj": "Ukraine",
+    "miasto": "Kyiv",
+    "pojemnosc": 16873,
+    "wartosc_klubu": 92.88,
+    "lat": 50.45028,
+    "lon": 30.53528
+  },
+{
+    "ID":125,
+    "nazwa": "FC Midtjylland",
+    "kraj": "Denmark",
+    "miasto": "Herning",
+    "pojemnosc": 12055,
+    "wartosc_klubu": 108.25,
+    "lat": 56.11687,
+    "lon": 8.95167
+},
+{
+    "ID":126,
+    "nazwa": "FC Copenhagen",
+    "kraj": "Denmark",
+    "miasto": "Copenhagen",
+    "pojemnosc": 38065,
+    "wartosc_klubu": 70.95,
+    "lat": 55.70271,
+    "lon": 12.57228
+},
+{
+    "ID":127,
+    "nazwa": "Brøndby IF",
+    "kraj": "Denmark",
+    "miasto": "Brøndby",
+    "pojemnosc": 28000,
+    "wartosc_klubu": 50.15,
+    "lat": 55.64889,
+    "lon": 12.41861
+},
+{
+    "ID":128,
+    "nazwa": "FC Nordsjælland",
+    "kraj": "Denmark",
+    "miasto": "Farum",
+    "pojemnosc": 10300,
+    "wartosc_klubu": 46.85,
+    "lat": 55.81607,
+    "lon": 12.35306
+},
+{
+    "ID":129,
+    "nazwa": "PSV Eindhoven",
+    "kraj": "Netherlands",
+    "miasto": "Eindhoven",
+    "pojemnosc": 35000,
+    "wartosc_klubu": 274.95,
+    "lat": 51.44172,
+    "lon": 5.46619
+},
+{
+    "ID":130,
+    "nazwa": "Feyenoord Rotterdam",
+    "kraj": "Netherlands",
+    "miasto": "Rotterdam",
+    "pojemnosc": 47500,
+    "wartosc_klubu": 260.13,
+    "lat": 51.89386,
+    "lon": 4.52323
+},
+{
+    "ID":131,
+    "nazwa": "Ajax Amsterdam",
+    "kraj": "Netherlands",
+    "miasto": "Amsterdam",
+    "pojemnosc": 55885,
+    "wartosc_klubu": 181.75,
+    "lat": 52.31334,
+    "lon": 4.94276
+},
+{
+    "ID":132,
+    "nazwa": "NEC Nijmegen",
+    "kraj": "Netherlands",
+    "miasto": "Nijmegen",
+    "pojemnosc": 12650,
+    "wartosc_klubu": 49.38,
+    "lat": 51.82243,
+    "lon": 5.83721
+},
+{
+    "ID":133,
+    "nazwa": "AZ Alkmaar",
+    "kraj": "Netherlands",
+    "miasto": "Alkmaar",
+    "pojemnosc": 19500,
+    "wartosc_klubu": 164.70,
+    "lat": 52.61281,
+    "lon": 4.74206
+},
+{
+    "ID":134,
+    "nazwa": "FC Twente",
+    "kraj": "Netherlands",
+    "miasto": "Enschede",
+    "pojemnosc": 30205,
+    "wartosc_klubu": 75.35,
+    "lat": 52.23647,
+    "lon": 6.83778
+},
+{
+    "ID":135,
+    "nazwa": "FC Utrecht",
+    "kraj": "Netherlands",
+    "miasto": "Utrecht",
+    "pojemnosc": 23750,
+    "wartosc_klubu": 60.10,
+    "lat": 52.07837,
+    "lon": 5.14574
+},
+{
+    "ID":136,
+    "nazwa": "Club Brugge KV",
+    "kraj": "Belgium",
+    "miasto": "Brugge",
+    "pojemnosc": 29062,
+    "wartosc_klubu": 259.80,
+    "lat": 51.19333,
+    "lon": 3.18056
+},
+{
+    "ID":137,
+    "nazwa": "KRC Genk",
+    "kraj": "Belgium",
+    "miasto": "Genk",
+    "pojemnosc": 23718,
+    "wartosc_klubu": 136.00,
+    "lat": 51.00500,
+    "lon": 5.53333
+},
+{
+    "ID":138,
+    "nazwa": "Union Saint-Gilloise",
+    "kraj": "Belgium",
+    "miasto": "Brussels",
+    "pojemnosc": 9512,
+    "wartosc_klubu": 134.05,
+    "lat": 50.81778,
+    "lon": 4.32917
+},
+{
+    "ID":139,
+    "nazwa": "KAA Gent",
+    "kraj": "Belgium",
+    "miasto": "Gent",
+    "pojemnosc": 20185,
+    "wartosc_klubu": 62.25,
+    "lat": 51.01608,
+    "lon": 3.73379
+},
+{
+    "ID":140,
+    "nazwa": "Royal Antwerp FC",
+    "kraj": "Belgium",
+    "miasto": "Antwerp",
+    "pojemnosc": 21000,
+    "wartosc_klubu": 51.70,
+    "lat": 51.23250,
+    "lon": 4.47222
+},
+{
+    "ID": 141,
+    "nazwa": "FC Porto",
+    "kraj": "Portugal",
+    "miasto": "Porto",
+    "pojemnosc": 50033,
+    "wartosc_klubu": 461.10,
+    "lat": 41.16180,
+    "lon": -8.58375
+},
+{
+    "ID": 142,
+    "nazwa": "SL Benfica",
+    "kraj": "Portugal",
+    "miasto": "Lisbon",
+    "pojemnosc": 68100,
+    "wartosc_klubu": 384.00,
+    "lat": 38.75271,
+    "lon": -9.18477
+},
+{
+    "ID": 143,
+    "nazwa": "Sporting CP",
+    "kraj": "Portugal",
+    "miasto": "Lisbon",
+    "pojemnosc": 52095,
+    "wartosc_klubu": 515.60,
+    "lat": 38.76111,
+    "lon": -9.16083
+},
+{
+    "ID" : 144,
+    "nazwa": "SC Braga",
+    "kraj": "Portugal",
+    "miasto": "Braga",
+    "pojemnosc": 30286,
+    "wartosc_klubu": 189.90,
+    "lat": 41.56195,
+    "lon": -8.43049
+},
+{
+    "ID": 145,
+    "nazwa": "Vitória Guimarães SC",
+    "kraj": "Portugal",
+    "miasto": "Guimarães",
+    "pojemnosc": 30029,
+    "wartosc_klubu": 42.90,
+    "lat": 41.44593,
+    "lon": -8.30092
+}
+
+
+
+
+
+
+
+
 ]
