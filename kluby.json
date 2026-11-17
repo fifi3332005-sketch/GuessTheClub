@@ -1561,13 +1561,289 @@
     "wartosc_klubu": 42.90,
     "lat": 41.44593,
     "lon": -8.30092
+},
+
+{
+    "id": 146,
+    "nazwa": "FC Basel 1893",
+    "kraj": "Switzerland",
+    "miasto": "Basel",
+    "pojemnosc": 38512,
+    "wartosc_klubu": 59.35,
+    "lat": 47.54139,
+    "lon": 7.62000
+},
+{
+    "id": 147,
+    "nazwa": "BSC Young Boys",
+    "kraj": "Switzerland",
+    "miasto": "Bern",
+    "pojemnosc": 31500,
+    "wartosc_klubu": 67.18,
+    "lat": 46.96306,
+    "lon": 7.46472
+},
+{
+    "id": 148,
+    "nazwa": "LASK",
+    "kraj": "Austria",
+    "miasto": "Linz",
+    "pojemnosc": 19080,
+    "wartosc_klubu": 40.63,
+    "lat": 48.29358,
+    "lon": 14.27657
+},
+{
+    "id": 149,
+    "nazwa": "Red Bull Salzburg",
+    "kraj": "Austria",
+    "miasto": "Salzburg",
+    "pojemnosc": 30188,
+    "wartosc_klubu": 123.15,
+    "lat": 47.81631,
+    "lon": 12.99819
+},
+{
+    "id": 150,
+    "nazwa": "SK Sturm Graz",
+    "kraj": "Austria",
+    "miasto": "Graz",
+    "pojemnosc": 16364,
+    "wartosc_klubu": 48.93,
+    "lat": 47.04636,
+    "lon": 15.45478
+},
+{
+    "id": 151,
+    "nazwa": "SK Slavia Prague",
+    "kraj": "Czech Republic",
+    "miasto": "Prague",
+    "pojemnosc": 19370,
+    "wartosc_klubu": 124.95,
+    "lat": 50.06750,
+    "lon": 14.47167
+},
+{
+    "id": 152,
+    "nazwa": "AC Sparta Prague",
+    "kraj": "Czech Republic",
+    "miasto": "Prague",
+    "pojemnosc": 18243,
+    "wartosc_klubu": 88.50,
+    "lat": 50.09972,
+    "lon": 14.41583
+},
+{
+    "id": 153,
+    "nazwa": "FC Viktoria Plzen",
+    "kraj": "Czech Republic",
+    "miasto": "Plzen",
+    "pojemnosc": 11700,
+    "wartosc_klubu": 59.50,
+    "lat": 49.75000,
+    "lon": 13.38556
+},
+{
+    "id": 154,
+    "nazwa": "Slovan Bratislava",
+    "kraj": "Slovakia",
+    "miasto": "Bratislava",
+    "pojemnosc": 22500,
+    "wartosc_klubu": 36.68,
+    "lat": 48.16346,
+    "lon": 17.13680
+},
+{
+    "id": 155,
+    "nazwa": "Ferencvárosi TC",
+    "kraj": "Hungary",
+    "miasto": "Budapest",
+    "pojemnosc": 23698,
+    "wartosc_klubu": 40.43,
+    "lat": 47.475435,
+    "lon": 19.095275
+},
+{
+    "id": 156,
+    "nazwa": "GNK Dinamo Zagreb",
+    "kraj": "Croatia",
+    "miasto": "Zagreb",
+    "pojemnosc": 35123,
+    "wartosc_klubu": 76.25,
+    "lat": 45.81889,
+    "lon": 16.01806
+},
+{
+    "id": 157,
+    "nazwa": "HNK Hajduk Split",
+    "kraj": "Croatia",
+    "miasto": "Split",
+    "pojemnosc": 34183,
+    "wartosc_klubu": 37.15,
+    "lat": 43.51944,
+    "lon": 16.43167
+},
+{
+    "id": 158,
+    "nazwa": "HNK Rijeka",
+    "kraj": "Croatia",
+    "miasto": "Rijeka",
+    "pojemnosc": 8136,
+    "wartosc_klubu": 35.83,
+    "lat": 45.34778,
+    "lon": 14.40222
+},
+
+{
+    "id": 159,
+    "nazwa": "Universitatea Craiova",
+    "kraj": "Romania",
+    "miasto": "Craiova",
+    "pojemnosc": 30983,
+    "wartosc_klubu": 38.80,
+    "lat": 44.314039,
+    "lon": 23.784178
+},
+{
+    "id": 160,
+    "nazwa": "FK Partizan Belgrade",
+    "kraj": "Serbia",
+    "miasto": "Belgrade",
+    "pojemnosc": 32712,
+    "wartosc_klubu": 57.05,
+    "lat": 44.78877,
+    "lon": 20.45907
+},
+{
+    "id": 161,
+    "nazwa": "Red Star Belgrade",
+    "kraj": "Serbia",
+    "miasto": "Belgrade",
+    "pojemnosc": 51755,
+    "wartosc_klubu": 125.00,
+    "lat": 44.78333,
+    "lon": 20.46472
+},
+
+{
+    "id": 162,
+    "nazwa": "AEK Athens",
+    "kraj": "Greece",
+    "miasto": "Athens",
+    "pojemnosc": 32500,
+    "wartosc_klubu": 85.80,
+    "lat": 38.03710,
+    "lon": 23.74160
+},
+{
+    "id": 163,
+    "nazwa": "Aris Thessaloniki",
+    "kraj": "Greece",
+    "miasto": "Thessaloniki",
+    "pojemnosc": 22800,
+    "wartosc_klubu": 27.65,
+    "lat": 40.60007,
+    "lon": 22.96950
+},
+{
+    "id": 164,
+    "nazwa": "Panathinaikos",
+    "kraj": "Greece",
+    "miasto": "Athens",
+    "pojemnosc": 15000,
+    "wartosc_klubu": 87.48,
+    "lat": 37.98717,
+    "lon": 23.75419
+},
+{
+    "id": 165,
+    "nazwa": "Olympiacos Piraeus",
+    "kraj": "Greece",
+    "miasto": "Piraeus",
+    "pojemnosc": 33345,
+    "wartosc_klubu": 152.20,
+    "lat": 37.94617,
+    "lon": 23.66454
+},
+{
+    "id": 166,
+    "nazwa": "PAOK Thessaloniki",
+    "kraj": "Greece",
+    "miasto": "Thessaloniki",
+    "pojemnosc": 28703,
+    "wartosc_klubu": 85.70,
+    "lat": 40.61384,
+    "lon": 22.97242
+},
+{
+    "id": 167,
+    "nazwa": "Levski Sofia",
+    "kraj": "Bulgaria",
+    "miasto": "Sofia",
+    "pojemnosc": 17688,
+    "wartosc_klubu": 37.38,
+    "lat": 42.70535,
+    "lon": 23.36329
+},
+{
+    "id": 168,
+    "nazwa": "Ludogorets Razgrad",
+    "kraj": "Bulgaria",
+    "miasto": "Razgrad",
+    "pojemnosc": 10423,
+    "wartosc_klubu": 39.75,
+    "lat": 43.53462,
+    "lon": 26.52761
+},
+{
+    "id": 169,
+    "nazwa": "Galatasaray",
+    "kraj": "Turkey",
+    "miasto": "Istanbul",
+    "pojemnosc": 53978,
+    "wartosc_klubu": 299.50,
+    "lat": 41.10338,
+    "lon": 28.99095
+},
+{
+    "id": 170,
+    "nazwa": "Besiktas JK",
+    "kraj": "Turkey",
+    "miasto": "Istanbul",
+    "pojemnosc": 42684,
+    "wartosc_klubu": 186.35,
+    "lat": 41.03946,
+    "lon": 28.99461
+},
+{
+    "id": 171,
+    "nazwa": "Fenerbahce SK",
+    "kraj": "Turkey",
+    "miasto": "Istanbul",
+    "pojemnosc": 47430,
+    "wartosc_klubu": 278.45,
+    "lat": 40.98763,
+    "lon": 29.03694
+},
+{
+    "id": 172,
+    "nazwa": "Trabzonspor",
+    "kraj": "Turkey",
+    "miasto": "Trabzon",
+    "pojemnosc": 41000,
+    "wartosc_klubu": 153.00,
+    "lat": 40.99883,
+    "lon": 39.64629
+},
+{
+    "id": 173,
+    "nazwa": "Istanbul Basaksehir FK",
+    "kraj": "Turkey",
+    "miasto": "Istanbul",
+    "pojemnosc": 17067,
+    "wartosc_klubu": 75.33,
+    "lat": 41.12278,
+    "lon": 28.80861
 }
-
-
-
-
-
-
-
 
 ]
